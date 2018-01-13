@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.squareup:javapoet:1.8.0'  //自动生成代码的库
+    compile 'com.google.auto.service:auto-service:1.0-rc2'   //自动配置注解解析器
+    compile 'com.google.auto:auto-common:0.8'
+    compile project(':latte-annotations')
+}
+
+
