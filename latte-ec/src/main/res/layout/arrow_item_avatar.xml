@@ -5,7 +5,7 @@
     android:layout_marginBottom="4dp"
     android:background="@android:color/white">
 
-    <android.support.v4.widget.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_arrow_avatar"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -20,5 +20,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:gravity="center"
-        android:text="{fa-chevron-right}" />
+        android:text="{fa-chevron-right}"
+        android:textColor="@android:color/darker_gray"/>
 </RelativeLayout>

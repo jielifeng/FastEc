@@ -12,6 +12,7 @@ import com.example.latte_ec2.R2;
 import com.example.latte_ec2.deltest.main.personal.list.ListAdapter;
 import com.example.latte_ec2.deltest.main.personal.list.ListBean;
 import com.example.latte_ec2.deltest.main.personal.list.ListItemType;
+import com.example.latte_ec2.deltest.main.personal.setting.NameDelegate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class UserProfileDelegate extends LatteDelegate {
         ListBean image = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_AVATAR)
                 .setId(1)
-                .setText("http://i9.qhimg.com/t017d891ca365ef60b5.jpg")
+                .setImageUrl("http://i9.qhimg.com/t017d891ca365ef60b5.jpg")
                 .build();
 
         ListBean name = new ListBean.Builder()
@@ -52,10 +53,11 @@ public class UserProfileDelegate extends LatteDelegate {
                 .setId(2)
                 .setText("姓名")
                 .setValue("未设置姓名")
+                .setDelegate(new NameDelegate())
                 .build();
 
         ListBean gender = new ListBean.Builder()
-                .setItemType(ListItemType.ITEM_AVATAR)
+                .setItemType(ListItemType.ITEM_NORMAL)
                 .setId(3)
                 .setText("性别")
                 .setValue("未设置性别")
@@ -79,5 +81,6 @@ public class UserProfileDelegate extends LatteDelegate {
         final ListAdapter adapter = new ListAdapter(data);
         mRecyclerView.setAdapter(adapter);
 
+        mRecyclerView.addOnItemTouchListener(new UserProfileClickListener(this));
     }
 }
