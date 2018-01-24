@@ -1,9 +1,11 @@
 package com.example.hasee.festec.exaple.app;
 
 import android.app.Activity;
+import android.app.Application;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
+import com.blankj.utilcode.util.Utils;
 import com.example.hasee.festec.exaple.delegate.web.event.Event;
 import com.example.hasee.festec.exaple.delegate.web.event.EventManager;
 import com.joanzapata.iconify.IconFontDescriptor;
@@ -48,7 +50,9 @@ public class Configurator {
     //执行初始化
     public final void configure(){
         initIcons();
+        LATTE_CONFIGS.put(ConfigType.CONFIG_READY,true);
         LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(),true);
+        Utils.init((Application) Latte.getApplicationContext());
     }
 
     public final Configurator withApiHost(String host)

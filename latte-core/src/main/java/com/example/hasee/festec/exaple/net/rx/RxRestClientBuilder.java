@@ -1,7 +1,9 @@
 package com.example.hasee.festec.exaple.net.rx;
 
 import android.content.Context;
+
 import com.example.hasee.festec.exaple.ui.loader.LoaderStyle;
+
 import java.io.File;
 import java.util.Map;
 import java.util.WeakHashMap;

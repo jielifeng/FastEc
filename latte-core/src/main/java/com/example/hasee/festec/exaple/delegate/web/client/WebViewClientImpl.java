@@ -6,14 +6,13 @@ import android.webkit.CookieManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.example.hasee.festec.exaple.app.ConfigType;
+import com.example.hasee.festec.exaple.app.Latte;
 import com.example.hasee.festec.exaple.delegate.IPageLoadListener;
 import com.example.hasee.festec.exaple.delegate.web.WebDelegate;
 import com.example.hasee.festec.exaple.delegate.web.route.Router;
 import com.example.hasee.festec.exaple.ui.loader.LatteLoader;
 import com.example.hasee.festec.exaple.util.storage.LattePreference;
-
-import com.example.hasee.festec.exaple.app.ConfigType;
-import com.example.hasee.festec.exaple.app.Latte;
 
 /**
  * Created by hasee on 2017-12-05.

@@ -20,7 +20,7 @@ public class ExampleApp extends Application {
         super.onCreate();
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
-                .withApiHost("http://10.0.2.2/RestServer/api/")
+                .withApiHost("http://192.168.1.110/RestServer/api/")
                 .withEvent("test",new TestEvent())
                 .WithJavascriptInterface("latte")
                 //添加Cookie同步拦截器

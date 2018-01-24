@@ -2,12 +2,17 @@ package com.example.latte_ec2.deltest.main.personal.profile;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.example.hasee.festec.exaple.delegate.LatteDelegate;
+import com.example.hasee.festec.exaple.util.callback.CallBackManager;
+import com.example.hasee.festec.exaple.util.callback.CallBackType;
+import com.example.hasee.festec.exaple.util.callback.IGlobalCallBack;
 import com.example.latte.data.DateDialogUtil;
 import com.example.latte_ec2.R;
 import com.example.latte_ec2.deltest.main.personal.list.ListBean;
@@ -32,6 +37,14 @@ public class UserProfileClickListener extends SimpleClickListener {
         switch (id){
             case 1:
                 //开始照相或选择图片
+                CallBackManager.getInstance()
+                        .addcallBack(CallBackType.NO_CROP, new IGlobalCallBack<Uri>() {
+                            @Override
+                            public void executeCallBack(Uri args) {
+                                Log.i("photo", "executeCallBack: "+args);
+                            }
+                        });
+                DELEGATE.startCameraWithCheck();
                 break;
             case 2:
                 final LatteDelegate nameDelegate = bean.getDelegate();
